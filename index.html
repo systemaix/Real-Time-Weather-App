@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkyCast | Weather Search</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div class="weather-card">
+  
+  <div class="search-bar">
+    <input type="text" id="city-input" placeholder="Enter city name..." onkeypress="handleEnter(event)">
+    <button onclick="searchCity()"><i class="fas fa-search"></i></button>
+    <button onclick="getLocation()" title="Use My Location"><i class="fas fa-location-arrow"></i></button>
+  </div>
+
+  <header>
+    <div class="location-info">
+      <h1 id="city-name">--</h1>
+      <p id="date-text">Search for a city...</p>
+    </div>
+  </header>
+
+  <div class="current-weather">
+    <div class="icon-box">
+      <i class="fas fa-cloud-sun" id="weather-icon"></i>
+    </div>
+    <div class="temp-box">
+      <span id="current-temp">--</span><span class="unit">°C</span>
+      <div class="condition" id="condition-text">--</div>
+    </div>
+    
+    <div class="details">
+      <div class="detail-item">
+        <i class="fas fa-wind"></i> <span id="wind-speed">-- km/h</span>
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-tint"></i> <span id="humidity">--%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="graph-container">
+    <canvas id="tempChart"></canvas>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
